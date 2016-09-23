@@ -4,12 +4,12 @@ exports.createLoginController = function (db) {
     return function (req, res) {
         // when login button pressed
         // validate submission
-        if (req.body.username == "")
+        if (req.body.username === "")
         {
             // print username error message
             res.renderWithLayout('login', {usernameErr : "You must provide a username."});
         }
-        else if (req.body.password == "")
+        else if (req.body.password === "")
         {
             // print password error message
             res.renderWithLayout('login', {passwordErr : "You must provide a password."});

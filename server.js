@@ -130,8 +130,6 @@ app.post('/logoff', logoffC.createLogoffController(con));
 app.post('/admin', adminC.createAdminController(con));
 // emmaadmin3_4
 
-// include error for if no html file
-
 app.get('/login', function(req, res) {
     res.renderWithLayout('login');
 })

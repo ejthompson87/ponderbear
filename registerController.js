@@ -6,12 +6,12 @@ exports.createRegisterController = function(db) {
     return function (req, res) {
         
         // validate submission
-        if (req.body.username == "")
+        if (req.body.username === "")
         {
             // print username error message
             res.renderWithLayout('register', {usernameErr : "You must provide a username."});
         }
-        else if (req.body.password == "")
+        else if (req.body.password === "")
         {
             // print password error message
             res.renderWithLayout('register', {passwordErr : "You must provide a password."});
@@ -22,7 +22,7 @@ exports.createRegisterController = function(db) {
             res.renderWithLayout('register', {rPasswordErr : "Passwords do not match."});
         }
 
-        else if (req.body.checkbox != true) {
+        else if (req.body.checkbox !== "true") {
             // print check terms and conditions
             console.log(req.body);
             res.renderWithLayout('register', {checkboxErr : "You must agree to terms and conditions to register."})
@@ -39,7 +39,7 @@ exports.createRegisterController = function(db) {
                 if (results.affectedRows > 0)
                 {
                     // get new User ID
-                    db.query("SELECT id FROM users WHERE username = ? AS idResult", [req.body.username], function(err,results)
+                    db.query("SELECT id AS idResult FROM users WHERE username = ?", [req.body.username], function(err,results)
                     {
                         if (err) {
                             console.log(err);
