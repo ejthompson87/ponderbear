@@ -1,0 +1,56 @@
+{{> header}}
+
+<div>
+    <div class="row requestTable">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table border="2" class="requestTable">
+            <tr>
+                <th> Request: </th>
+                <th> Answer: </th>
+                <th> Input Answer: </th>
+                <th> Submit </th>
+            </tr>
+            <div class="requestResponse">
+                {{#questions}}
+                <form action="/admin" method="post">
+                <tr>
+                    <td name="questionR">
+                        {{question}} 
+                    </td>
+                    <td>
+                        {{answer}}
+                        {{^answer}} 
+                        <div class="ponderingText">
+                            Pondering....
+                        </div>
+                        {{/answer}}
+                    </td>
+                    <input type="hidden" name="id" value="{{id}}"/>
+                    <td>
+                        <div class="form-group">
+                            <input autocomplete="off" autofocus class="form-control" name="inputAnswer" placeholder="Input answer" type="text"/>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <button class="btn btn-default" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </form>
+                {{/questions}}                
+            </div>
+        </table>
+    <div class="errorMessages"> <!-- if not admin print "restricted access" --> 
+        {{restrictedAlert}} 
+        {{adminErr}}
+        {{adminInput}}
+    </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{{> footer}}

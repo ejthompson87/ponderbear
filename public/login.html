@@ -1,0 +1,35 @@
+{{> header}}
+
+<div class="row loginForm">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form action="/login" method="post">
+            <fieldset class="widthForm">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="password" placeholder="Password" type="password"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit">
+                        Log In
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="errorMessages">
+            {{usernameErr}}
+            {{passwordErr}}
+            {{loginFailErr}}
+        </div>
+
+        <div>
+            or <a class="loginLink" href="register">register</a> for an account
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+{{> footer}}

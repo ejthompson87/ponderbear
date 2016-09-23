@@ -1,0 +1,200 @@
+h2
+{
+    text-align: center;
+    font-size: 16;
+    padding-top: 10px;
+}
+
+body
+{
+    font-family: Tsukushi A Round Gothic;
+}
+
+.mainContent
+{
+    min-height: 528px;
+}
+
+.topLinks
+{
+    padding-top: 10px;
+}
+
+.login
+{
+    text-align: right;
+}
+
+a
+{
+    padding-right: 20px;
+    font-size: 16;    
+}
+
+a:hover
+{
+    color: orange;
+}
+
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 280px;
+    max-width: 130px;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+
+.logoText
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+.bottomText
+{
+    background: #ededed; 
+}
+
+.foot
+{  
+    background: linear-gradient(0deg, #2a2a2a, #ededed); 
+    height: 100%;
+    text-align: center; 
+}
+
+.middle
+{
+    padding-bottom: 20px;
+}
+
+.top
+{
+    padding-bottom: 40px;
+    background-color: #ededed;
+}
+
+table
+{
+    text-align: center;
+    width: 100%;
+}
+
+.requestTable tr:nth-child(2n)
+{
+    background-color: #C0DCE5;
+}
+
+.requestTable tr 
+{
+    background-color: #F0F8FF;
+}
+
+th
+{
+    text-align: center;
+    background-color: white;
+}
+
+td
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: 
+}
+
+.requestTable
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.ponderingText
+{
+    font-style: italic;
+    color:  #A9A9A9;
+}
+
+.loginForm
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.loginLink
+{
+    padding-right: 0;
+}
+
+.widthForm
+{
+    max-width: 160px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.errorMessages
+{
+    font-size: 24px;
+    color: red;
+    text-align: center;
+}
+
+.buttonLogoff
+{
+    background:none!important;
+    border:none; 
+    padding:0!important;
+    cursor: pointer;
+    font-size: 16;   
+}
+
+.buttonLogoff:hover
+{
+    color: orange;
+}
+
+.foot {
+    padding-top: 10px;
+}
+
+.popup .popuptext {
+    width:330px;
+    height:340px;
+    position:absolute; 
+    background-color: #555;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 6px;
+    top:50%;
+    left:50%;
+    margin:-165px 0 0 -170px; /* [-(height/2)px 0 0 -(width/2)px] */
+    display:none;
+    cursor: pointer;
+}
+
+.tc {
+    cursor: pointer;
+}
+
+.tc:hover {
+    color: orange;
+}
+
+.popup .show {
+    visibility: visible;
+} 
+
+.close-btn {
+    font-style: italic;
+}
+
+.tcCheckbox {
+    padding-bottom: 10px;
+}

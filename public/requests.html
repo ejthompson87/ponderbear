@@ -1,0 +1,45 @@
+{{> header}}
+
+<div class="row requestTable">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <table border="2" class="requestTable">
+            <tr>
+                <th> Request: </th>
+                <th> Answer: </th>
+            <tr>
+            <div class="requestResponse">
+                {{#questions}}
+                <tr>
+                    <td>
+                        {{question}} 
+                    </td>
+                    <td>
+                        {{answer}}
+                        {{^answer}} 
+                        <div class="ponderingText">
+                            Pondering....
+                        </div>
+                        {{/answer}}
+                    </td>
+                </tr>
+                {{/questions}}
+                {{^questions}} 
+                <tr> 
+                    <td> 
+                        No requests submitted. 
+                    </td> 
+                    {{^answers}}
+                    <td></td>
+                    {{/answers}}
+                </tr>
+                {{/questions}} 
+                
+            </div>
+        </table>
+    <div> {{requestErr}} </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+{{> footer}}
