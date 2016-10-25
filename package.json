@@ -1,0 +1,30 @@
+{
+  "name": "ponderbear",
+  "version": "1.0.0",
+  "description": "Website created for CS50 final project.  Accepts questions and provides answers.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express-session": "^1.14.1",
+    "express": "^4.14.0",
+    "mysql": "^2.11.1",
+    "mustache-express": "^1.2.2",
+    "passport": "^0.3.2",
+    "password-hash": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "CS50",
+    "node",
+    "final_project",
+    "brainstorming",
+    "ideas"
+  ],
+  "author": "Emma Thompson",
+  "license": "ISC"
+}
