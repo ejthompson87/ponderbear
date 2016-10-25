@@ -1,48 +1,62 @@
 {{> header}}
 
 <div class="middle">
-        <div class="row">
-            <img 
-                id="logoBear"
-                class="logo"
-                src="ponderBearBlack.png"
-                alt="Ponder Bear"/>
+    <div class="row">
+        <img 
+            id="logoBear"
+            class="logo"
+            src="ponderBearBlack.png"
+            alt="Ponder Bear"/>
+    </div>
+    <div class="row">
+        <img 
+            id="logoText"
+            class="logoText"
+            src="logoText.png"
+            alt="Ponder Bear"/>
+    </div>
+    <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">    
+            <form action="/submit" method="post">
+                <fieldset>
+                    <div class="form-group">
+                        <input autocomplete="off" autofocus class="form-control textBox" maxlength="200" name="idea" placeholder="Input question.." type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="submit">
+                            <span aria-hidden="true"></span>
+                                Submit
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <div class="row">
-            <img 
-                id="logoText"
-                class="logoText"
-                src="logoText.png"
-                alt="Ponder Bear"/>
-        </div>
-        <div class="row">
-            <div class="col-md-3"> </div>
-            <div class="col-md-6">    
-                <form action="/submit" method="post">
-                    <fieldset>
-                        <div class="form-group">
-                            <input autocomplete="off" autofocus class="form-control textBox" maxlength="200" name="idea" placeholder="Input question.." type="text"/>
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-default" type="submit">
-                                <span aria-hidden="true"></span>
-                                    Submit
-                            </button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="col-md-3"> </div>
-        </div>
+        <div class="col-md-3"> </div>
     </div>
 </div>    
+<div class="errorMessages"> {{requestErr}} </div>
 <div class="bottom"> 
     <div class="row bottomText">
         <div class="col-md-3"> </div>
-        <div class="col-md-6">
-            <h2>
-                Need inspiration? Stuck with your business name, business idea, book title, character name or (insert stuck thing)?  Ask Ponder Bear!  He'll have a ponder.. and get back to you with some creative, somewhat inspiring, hopefully useful suggestions..
-            </h2>
+        <div class="col-md-6 whatPop">
+            <span class="popup" onclick="whatOverlay()">
+                <span class="what">
+                    What is this?    
+                </span>
+                <span class="popuptext" id="whatPopup">
+                    Ponder Bear is here to help you brainstorm. Stuck with your business name, business idea, book title, character name or (insert stuck thing)?  <br> Ask Ponder Bear!  He'll have a ponder.. and get back to you with some creative, somewhat inspiring, hopefully useful suggestions..
+                    <br><br>
+                    <span class="close-btn"> close</span>
+                </span>
+            </span>
+            <script>
+            // what popup
+            function whatOverlay() {
+                var popup = document.getElementById('whatPopup');
+                popup.classList.toggle('show');
+            }
+            </script>            
         </div>
         <div class="col-md-3"> </div>
     </div>

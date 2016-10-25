@@ -6,7 +6,7 @@
         <form action="/register" method="post">
             <fieldset>
                 <div class="form-group widthForm">
-                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" value="{{usernamePrefill}}"/>
                 </div>
                 <div class="form-group widthForm">
                     <input class="form-control" name="password" placeholder="Password" type="password"/>
@@ -34,6 +34,8 @@
             {{rRegFailErr}}
             {{regFailErr}}
             {{checkboxErr}}
+            {{usernameCErr}}
+            {{passwordCErr}}
         </div>
 
         <div>

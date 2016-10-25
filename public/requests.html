@@ -11,10 +11,10 @@
             <div class="requestResponse">
                 {{#questions}}
                 <tr>
-                    <td>
+                    <td class="questionData">
                         {{question}} 
                     </td>
-                    <td>
+                    <td class="answerData">
                         {{answer}}
                         {{^answer}} 
                         <div class="ponderingText">
@@ -26,18 +26,18 @@
                 {{/questions}}
                 {{^questions}} 
                 <tr> 
-                    <td> 
+                    <td class="questionData"> 
                         No requests submitted. 
                     </td> 
                     {{^answers}}
-                    <td></td>
+                    <td class="answerData"></td>
                     {{/answers}}
                 </tr>
                 {{/questions}} 
                 
             </div>
         </table>
-    <div> {{requestErr}} </div>
+    <div class="errorMessages"> {{requestErr}} </div>
     </div>
     <div class="col-md-3"></div>
 </div>

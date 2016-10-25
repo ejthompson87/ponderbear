@@ -1,10 +1,3 @@
-h2
-{
-    text-align: center;
-    font-size: 16;
-    padding-top: 10px;
-}
-
 body
 {
     font-family: Tsukushi A Round Gothic;
@@ -12,7 +5,7 @@ body
 
 .mainContent
 {
-    min-height: 528px;
+    min-height: 560px;
 }
 
 .topLinks
@@ -55,21 +48,13 @@ a:hover
     padding-bottom: 50px;
 }
 
-.bottomText
-{
-    background: #ededed; 
-}
-
 .foot
 {  
-    background: linear-gradient(0deg, #2a2a2a, #ededed); 
-    height: 100%;
+    /* background: linear-gradient(0deg, #2a2a2a, #ededed); */
+    padding-top: 10px;
+    background: #ededed;
+    height: 150px;
     text-align: center; 
-}
-
-.middle
-{
-    padding-bottom: 20px;
 }
 
 .top
@@ -82,11 +67,12 @@ table
 {
     text-align: center;
     width: 100%;
+    border-color: black;
 }
 
 .requestTable tr:nth-child(2n)
 {
-    background-color: #C0DCE5;
+    background-color: #deeff5;
 }
 
 .requestTable tr 
@@ -104,7 +90,7 @@ td
 {
     padding-top: 15px;
     padding-bottom: 15px;
-    background-color: 
+    min-width: 180px;
 }
 
 .requestTable
@@ -119,6 +105,7 @@ td
     color:  #A9A9A9;
 }
 
+/* style for login form fields */
 .loginForm
 {
     padding-top: 40px;
@@ -160,23 +147,23 @@ td
     color: orange;
 }
 
-.foot {
-    padding-top: 10px;
-}
-
+/* Popup style for 'What is this?' and Terms and Conditions */
 .popup .popuptext {
-    width:330px;
-    height:340px;
-    position:absolute; 
+    width:350px;
+    max-height: content;
+    position: fixed; 
+    margin-left: auto;
+    margin-right: auto;
     background-color: #555; 
     color: #fff;
     padding: 10px 10px;
     border-radius: 6px;
-    top:50%;
-    left:50%;
+    top:50%; 
+    left:50%; 
     margin:-165px 0 0 -170px; /* [-(height/2)px 0 0 -(width/2)px] */
-    display:none;
+    display:none; 
     cursor: pointer;
+    font-size: 14px;
 }
 
 .tc {
@@ -185,6 +172,10 @@ td
 
 .tc:hover {
     color: orange;
+}
+
+.tandcLink {
+    padding-top: 10px;
 }
 
 .popup .show {
@@ -197,4 +188,20 @@ td
 
 .tcCheckbox {
     padding-bottom: 10px;
+}
+
+
+/* Popup overlay link for 'What is this?' */
+.whatPop {
+    text-align: center;
+}
+
+.what {
+    cursor: pointer;
+    color: #337ab7;
+    font-size: 14;
+}
+
+.what:hover {
+    color: orange;
 }
