@@ -72,26 +72,31 @@ app.get('/requests', function(req, res){
 });
 
 app.get('/admin', function(req,res){
-    // check if admin logged in (admin userID is 17)
-    con.query('SELECT * FROM users WHERE username = ?', ["admin"], function(err, results) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        if (req.session.userid === results[0].id) {
-            con.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
-                console.log(results);
-                if (err) {
-                    console.log(err);
-                    res.renderWithLayout('admin', {adminErr : "Error retrieving request"});
-                } else { 
-                    res.renderWithLayout('admin', {questions : results});
-                }
-            });
-        } else {
-            res.renderWithLayout('admin', {restrictedAlert : "Restricted Access Only"});
-        }
-    });
+    // Check if user is logged in
+    if (req.session.userid != null) {
+        con.query('SELECT * FROM users WHERE id = ?', [req.session.userid], function(err, results) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            // check to make sure admin user
+            if (results[0].is_admin === 1) {
+                con.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
+                    console.log(results);
+                    if (err) {
+                        console.log(err);
+                        res.renderWithLayout('admin', {adminErr : "Error retrieving request"});
+                    } else { 
+                        res.renderWithLayout('admin', {questions : results});
+                    }
+                });
+            } else {
+                res.renderWithLayout('admin', {restrictedAlert : "Restricted Access Only"});
+            }
+        });
+    } else {
+        res.renderWithLayout('admin', {restrictedAlert : "Restricted Access Only"});
+    }
 });
 
 // call login controller when login button pressed
