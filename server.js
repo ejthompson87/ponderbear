@@ -12,12 +12,7 @@ var logoffC = require('./logoffController.js');
 var adminC = require('./adminController.js');
 
 //conntect to database
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "monopoly",
-  database: "ponderbear"
-});
+var con = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 con.connect(function(err){
   if(err){
     console.log('Error connecting to Db');
