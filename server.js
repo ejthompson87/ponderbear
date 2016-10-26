@@ -28,7 +28,7 @@ app.set('port', (process.env.PORT || 5000));
 
 app.set('view engine', 'html');  
 
-app.set('views', __dirname + '/public');
+app.set('views', __dirname + '/htmlTemplates');
 
 // Session middleware
 app.use(session({
