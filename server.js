@@ -12,14 +12,7 @@ var logoffC = require('./logoffController.js');
 var adminC = require('./adminController.js');
 
 //conntect to database
-var con = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
-con.connect(function(err){
-  if(err){
-    console.log('Error connecting to Db');
-    return;
-  }
-  console.log('Connection established');
-});
+var dbPool = mysql.createPool(process.env.CLEARDB_DATABASE_URL + "&connectionLimit=10");
 
 // render pages
 app.engine('html', mustacheExpress());   
@@ -60,7 +53,7 @@ app.use (function(req, res, next) {
 
 // retrieve questions and answers from SQL
 app.get('/requests', function(req, res){
-    con.query('SELECT * FROM idea_requests WHERE user_id = ?;', [req.session.userid], function(err, rows){
+    dbPool.query('SELECT * FROM idea_requests WHERE user_id = ?;', [req.session.userid], function(err, rows){
         if (err) {
             console.log(err);
             return;
@@ -74,14 +67,14 @@ app.get('/requests', function(req, res){
 app.get('/admin', function(req,res){
     // Check if user is logged in
     if (req.session.userid != null) {
-        con.query('SELECT * FROM users WHERE id = ?', [req.session.userid], function(err, results) {
+        dbPool.query('SELECT * FROM users WHERE id = ?', [req.session.userid], function(err, results) {
             if (err) {
                 console.log(err);
                 return;
             }
             // check to make sure admin user
             if (results[0].is_admin === 1) {
-                con.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
+                dbPool.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
                     console.log(results);
                     if (err) {
                         console.log(err);
@@ -100,19 +93,19 @@ app.get('/admin', function(req,res){
 });
 
 // call login controller when login button pressed
-app.post('/login', loginC.createLoginController(con));
+app.post('/login', loginC.createLoginController(dbPool));
 
 // call register controller when register button pressed
-app.post('/register', registerC.createRegisterController(con));
+app.post('/register', registerC.createRegisterController(dbPool));
 
 // call submit controller when submit button pressed
-app.post('/submit', submitC.createSubmitRequestController(con));
+app.post('/submit', submitC.createSubmitRequestController(dbPool));
 
 // call logoff controller when logoff button pressed
-app.post('/logoff', logoffC.createLogoffController(con));
+app.post('/logoff', logoffC.createLogoffController(dbPool));
 
 // call a admin controller when answers submitted
-app.post('/admin', adminC.createAdminController(con));
+app.post('/admin', adminC.createAdminController(dbPool));
 
 app.get('/login', function(req, res) {
     res.renderWithLayout('login');
