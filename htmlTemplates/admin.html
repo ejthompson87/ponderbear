@@ -13,13 +13,13 @@
                     <th> Submit </th>
                 </tr>
                 <div class="requestResponse">
-
+                    {{#questions}}
                     <form action="/admin" method="post">
                     <tr>
                         <td>
-                            {{usernameKey}}
+                            {{username}}
                         </td>
-                        {{#questions}}
+
                         <td name="questionR">
                             {{question}} 
                         </td>
@@ -44,8 +44,8 @@
                                 </button>
                             </div>
                         </td>
-                        {{/questions}}  
                     </tr>
+                    {{/questions}}                    
                     </form>
                 </div>
             </table>
