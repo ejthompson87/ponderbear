@@ -73,12 +73,18 @@ app.get('/admin', function(req,res){
             // check to make sure admin user
             if (results[0].is_admin === 1) {
                 dbPool.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
-                    console.log(results);
                     if (err) {
                         console.log(err);
                         res.renderWithLayout('admin', {adminErr : "Error retrieving request"});
                     } else { 
-                        res.renderWithLayout('admin', {questions : results});
+                        dbPool.query('SELECT username FROM users WHERE id = ?', [results[0].user_id], function(err, resultsU) {
+                            if (err) {
+                                console.log(err);
+                                return;
+                            } else {
+                                res.renderWithLayout('admin', {questions : results, usernameKey: resultsU});  
+                            }
+                        });
                     }
                 });
             } else {
