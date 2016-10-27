@@ -55,7 +55,6 @@ exports.createRegisterController = function(db) {
                             console.log(err);
                             return;
                         }
-                        console.log(results);
                         var id = results[0].idResult;
 
                         // remember that user's now logged in by storing user's ID in session

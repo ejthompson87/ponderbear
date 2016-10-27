@@ -30,8 +30,7 @@ exports.createLoginController = function (db) {
                     res.renderWithLayout('login', {regFailErr : "Error.. Login failed."});
                     return;
                 }
-                console.log(results)
-                
+
                 // if exists, verify password
                 if (results.length > 0 && passwordHash.verify(req.body.password, results[0].hash))
                 {

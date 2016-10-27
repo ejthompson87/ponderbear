@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <table border="2" class="requestTable">
                 <tr>
+                    <th> Username: </th>
                     <th> Request: </th>
                     <th> Answer: </th>
                     <th> Input Answer: </th>
@@ -15,6 +16,9 @@
                     {{#questions}}
                     <form action="/admin" method="post">
                     <tr>
+                        <td>
+                            {{username}}
+                        </td>
                         <td name="questionR">
                             {{question}} 
                         </td>

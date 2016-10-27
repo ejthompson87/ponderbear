@@ -58,8 +58,6 @@ app.get('/requests', function(req, res){
             console.log(err);
             return;
         }
-        console.log(rows);
-        //res.render
         res.renderWithLayout('requests', {questions : rows.reverse()});
   });
 });

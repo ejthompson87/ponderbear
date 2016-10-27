@@ -1,8 +1,11 @@
 
 module.exports = function submitRequest(question, userID, db, res) {
     // check if already logged in
-    if (!question.match(/^[-a-zA-Z0-9_@\*#&%!,'"\.\s\?\$]+$/)) {
-        res.renderWithLayout('index', {requestErr : "Illegal charactors used."});
+    if (!question.match(/[a-zA-Z]+/)) {
+        res.renderWithLayout('index', {requestErr : "Ponder Bear needs something to work with.."});        
+    } 
+    else if (!question.match(/^[-a-zA-Z0-9_@\*#&%!,'"\.\s\?\$]+$/)) {
+        res.renderWithLayout('index', {requestErr : "Illegal characters used."});
         return;
     }
     else if (question.length > 200) {
