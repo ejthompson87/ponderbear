@@ -10,11 +10,12 @@ exports.createAdminController = function (db) {
             }
             if (results[0].is_admin === 1) {
                 // link id and to request
-                if (!req.body.inputAnswer.match(/^[-a-zA-Z0-9_@\*#&%!,'"\.\s\?\$]+$/)) {
-                    res.renderWithLayout('admin', {adminInputErr : "Illegal Characters."});
-                    return;
-                }
+
                 if (req.body.inputAnswer != null && req.body.inputAnswer !== "") {
+                    if (!req.body.inputAnswer.match(/^[-a-zA-Z0-9_@\*#&%!,'"\.\s\?\$]+$/)) {
+                        res.renderWithLayout('admin', {adminInputErr : "Illegal Characters."});
+                        return;
+                    }
                     db.query("UPDATE idea_requests SET answer = ? WHERE id = ?", [req.body.inputAnswer, req.body.id], function(err, results) {
                         if (err) {
                             console.log(err);
