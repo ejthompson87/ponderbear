@@ -73,7 +73,9 @@ app.get('/admin', function(req,res){
             // check to make sure admin user
             if (results[0].is_admin === 1) {
                 // dbPool.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
-                dbPool.query('SELECT * FROM idea_requests INNER JOIN users on idea_requests.user_id = users.id WHERE answer IS NULL', function(err, results) {
+                // dbPool.query('SELECT * FROM idea_requests INNER JOIN users on idea_requests.user_id = users.id WHERE answer IS NULL', function(err, results) {
+
+               dbPool.query('SELECT idea_requests.*, users.username FROM users INNER JOIN users on idea_requests.user_id = users.id WHERE idea_requests.answer IS NULL', function(err, results) {
                     if (err) {
                         console.log(err);
                         res.renderWithLayout('admin', {adminErr : "Error retrieving request"});
