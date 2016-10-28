@@ -75,11 +75,12 @@ app.get('/admin', function(req,res){
                 // dbPool.query('SELECT * FROM idea_requests WHERE answer IS NULL', function(err, results) {
                 // dbPool.query('SELECT * FROM idea_requests INNER JOIN users on idea_requests.user_id = users.id WHERE answer IS NULL', function(err, results) {
 
-               dbPool.query('SELECT idea_requests.*, users.username FROM idea_requests INNER JOIN users on idea_requests.user_id = users.id WHERE idea_requests.answer IS NULL', function(err, results) {
+               dbPool.query('SELECT idea_requests.*, username FROM idea_requests INNER JOIN users on idea_requests.user_id = users.id WHERE idea_requests.answer IS NULL', function(err, results) {
                     if (err) {
                         console.log(err);
                         res.renderWithLayout('admin', {adminErr : "Error retrieving request"});
                     } else { 
+                        console.log(results);
                     //    dbPool.query('SELECT username FROM users WHERE id = ?', [results[0].user_id], function(err, resultsU) {
                     //        if (err) {
                     //            console.log(err);
