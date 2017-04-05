@@ -40,7 +40,8 @@ a {
 }
 
 .top {
-    padding-bottom: $base-padding * 2;
+    /* padding-bottom: $base-padding * 2; */
+    padding-bottom: $base-padding;
     background-color: $background-grey;
 }
 
