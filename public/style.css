@@ -1,207 +1,145 @@
-body
-{
-    font-family: Tsukushi A Round Gothic;
-}
+.topLinks {
+  padding-top: 10px; }
 
-.mainContent
-{
-    min-height: 560px;
-}
+.login {
+  text-align: right; }
 
-.topLinks
-{
-    padding-top: 10px;
-}
+.foot {
+  padding-top: 10px;
+  background: #ededed;
+  height: 150px;
+  text-align: center; }
 
-.login
-{
-    text-align: right;
-}
+.tandcLink {
+  padding-top: 10px; }
 
-a
-{
-    padding-right: 20px;
-    font-size: 16;    
-}
+body {
+  font-family: Tsukushi A Round Gothic;
+  font-size: 16px; }
 
-a:hover
-{
-    color: orange;
-}
+.mainContent {
+  min-height: 560px; }
 
-.logo
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 280px;
-    max-width: 130px;
-    padding-bottom: 20px;
-    padding-top: 40px;
-}
+a {
+  padding-right: 20px;
+  color: #337ab7; }
+  a:hover {
+    color: orange; }
 
-.logoText
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 50px;
-}
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-height: 280px;
+  max-width: 130px;
+  padding-bottom: 20px;
+  padding-top: 40px; }
 
-.foot
-{  
-    /* background: linear-gradient(0deg, #2a2a2a, #ededed); */
-    padding-top: 10px;
-    background: #ededed;
-    height: 150px;
-    text-align: center; 
-}
+.logoText {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 40px; }
 
-.top
-{
-    padding-bottom: 40px;
-    background-color: #ededed;
-}
+.top {
+  padding-bottom: 40px;
+  background-color: #ededed; }
 
-table
-{
-    text-align: center;
-    width: 100%;
-    border-color: black;
-}
+table {
+  text-align: center;
+  width: 100%;
+  border-color: black; }
 
-.requestTable tr:nth-child(2n)
-{
-    background-color: #deeff5;
-}
+.requestTable tr {
+  background-color: #F0F8FF; }
+  .requestTable tr:nth-child(2n) {
+    background-color: #deeff5; }
 
-.requestTable tr 
-{
-    background-color: #F0F8FF;
-}
+th {
+  text-align: center;
+  background-color: white; }
 
-th
-{
-    text-align: center;
-    background-color: white;
-}
+td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  min-width: 180px; }
 
-td
-{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    min-width: 180px;
-}
+.requestTable {
+  padding-top: 40px;
+  padding-bottom: 40px; }
 
-.requestTable
-{
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.ponderingText
-{
-    font-style: italic;
-    color:  #A9A9A9;
-}
+.ponderingText {
+  font-style: italic;
+  color: #A9A9A9; }
 
 /* style for login form fields */
-.loginForm
-{
-    padding-top: 40px;
-    padding-bottom: 40px;
-    text-align: center;
-}
+.loginForm {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center; }
 
-.loginLink
-{
-    padding-right: 0;
-}
+.loginLink {
+  padding-right: 0; }
 
-.widthForm
-{
-    max-width: 160px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+.widthForm {
+  max-width: 160px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
 
-.errorMessages
-{
-    font-size: 24px;
-    color: red;
-    text-align: center;
-}
+.errorMessages {
+  font-size: 1.5em;
+  color: red;
+  text-align: center; }
 
-.buttonLogoff
-{
-    background:none!important;
-    border:none; 
-    padding:0!important;
-    cursor: pointer;
-    font-size: 16;   
-}
-
-.buttonLogoff:hover
-{
-    color: orange;
-}
+.buttonLogoff {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  cursor: pointer; }
+  .buttonLogoff:hover {
+    color: orange; }
 
 /* Popup style for 'What is this?' and Terms and Conditions */
 .popup .popuptext {
-    width:350px;
-    max-height: content;
-    position: fixed; 
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #555; 
-    color: #fff;
-    padding: 10px 10px;
-    border-radius: 6px;
-    top:50%; 
-    left:50%; 
-    margin:-165px 0 0 -170px; /* [-(height/2)px 0 0 -(width/2)px] */
-    display:none; 
-    cursor: pointer;
-    font-size: 14px;
-}
+  width: 350px;
+  max-height: content;
+  position: fixed;
+  margin: 0 auto;
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  top: 50%;
+  left: 50%;
+  margin: -165px 0 0 -170px;
+  /* [-(height/2)px 0 0 -(width/2)px] */
+  display: none;
+  cursor: pointer;
+  font-size: 0.875em; }
 
 .tc {
-    cursor: pointer;
-}
-
-.tc:hover {
-    color: orange;
-}
-
-.tandcLink {
-    padding-top: 10px;
-}
+  cursor: pointer;
+  font-size: 0.875em; }
+  .tc:hover {
+    color: orange; }
 
 .popup .show {
-    visibility: visible;
-} 
+  visibility: visible; }
 
 .close-btn {
-    font-style: italic;
-}
+  font-style: italic; }
 
 .tcCheckbox {
-    padding-bottom: 10px;
-}
+  padding-bottom: 10px; }
 
-
-/* Popup overlay link for 'What is this?' */
+/* Popup overlay link for 'what is this?' */
 .whatPop {
-    text-align: center;
-}
+  text-align: center; }
 
 .what {
-    cursor: pointer;
-    color: #337ab7;
-    font-size: 14;
-}
+  cursor: pointer;
+  color: #337ab7;
+  font-size: 0.875em; }
+  .what:hover {
+    color: orange; }
 
-.what:hover {
-    color: orange;
-}
+/*# sourceMappingURL=style.css.map */
