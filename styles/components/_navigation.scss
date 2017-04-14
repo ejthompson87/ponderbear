@@ -1,0 +1,23 @@
+
+// terms and conditions link 
+.tc {
+    cursor: pointer;
+    font-size: 0.875em;
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+// 'what is this' link
+.what {
+    cursor: pointer;
+    color: $link-color;
+    font-size: 0.875em; 
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+.loginLink {
+    padding-right: 0;
+}

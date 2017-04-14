@@ -1,0 +1,12 @@
+
+.requestTable tr {
+    background-color: #F0F8FF;
+    &:nth-child(2n) {
+        background-color: #deeff5;
+    }
+}
+
+.requestTable {
+    padding-top: $base-padding * 2;
+    padding-bottom: $base-padding * 2;
+}

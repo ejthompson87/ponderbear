@@ -1,6 +1,4 @@
 var express = require('express');
-var fs = require('fs');
-var app = express();
 var mustacheExpress = require('mustache-express');
 var mysql = require('mysql');
 var loginC = require('./loginController.js');
@@ -10,6 +8,8 @@ var session = require('express-session');
 var submitC = require('./submitRequestController.js');
 var logoffC = require('./logoffController.js');
 var adminC = require('./adminController.js');
+
+var app = express();
 
 //conntect to database
 var dbPool = mysql.createPool(process.env.CLEARDB_DATABASE_URL + "&connectionLimit=10");

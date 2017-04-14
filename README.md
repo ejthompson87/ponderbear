@@ -1,6 +1,8 @@
 
 
+Run Sass Compiler 
 
+    $ sass --watch styles/global.scss:public/style.css
 
 
 

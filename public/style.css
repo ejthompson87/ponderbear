@@ -1,30 +1,38 @@
-.topLinks {
-  padding-top: 10px; }
-
-.login {
-  text-align: right; }
-
-.foot {
-  padding-top: 10px;
-  background: #ededed;
-  height: 150px;
-  text-align: center; }
-
-.tandcLink {
-  padding-top: 10px; }
-
 body {
   font-family: Tsukushi A Round Gothic;
   font-size: 16px; }
-
-.mainContent {
-  min-height: 560px; }
 
 a {
   padding-right: 20px;
   color: #337ab7; }
   a:hover {
     color: orange; }
+
+table {
+  text-align: center;
+  width: 100%;
+  border-color: black; }
+
+th {
+  text-align: center;
+  background-color: white; }
+
+td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  min-width: 180px; }
+
+.ponderingText {
+  font-style: italic;
+  color: #A9A9A9; }
+
+.errorMessages {
+  font-size: 1.5em;
+  color: red;
+  text-align: center; }
+
+.main-content {
+  min-height: 560px; }
 
 .logo {
   display: block;
@@ -38,38 +46,6 @@ a {
   display: block;
   margin: 0 auto;
   padding-bottom: 40px; }
-
-.top {
-  /* padding-bottom: $base-padding * 2; */
-  padding-bottom: 20px;
-  background-color: #ededed; }
-
-table {
-  text-align: center;
-  width: 100%;
-  border-color: black; }
-
-.requestTable tr {
-  background-color: #F0F8FF; }
-  .requestTable tr:nth-child(2n) {
-    background-color: #deeff5; }
-
-th {
-  text-align: center;
-  background-color: white; }
-
-td {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  min-width: 180px; }
-
-.requestTable {
-  padding-top: 40px;
-  padding-bottom: 40px; }
-
-.ponderingText {
-  font-style: italic;
-  color: #A9A9A9; }
 
 /* style for login form fields */
 .loginForm {
@@ -86,10 +62,31 @@ td {
   margin-left: auto;
   margin-right: auto; }
 
-.errorMessages {
-  font-size: 1.5em;
-  color: red;
-  text-align: center; }
+.tcCheckbox {
+  padding-bottom: 10px; }
+
+.what {
+  cursor: pointer;
+  color: #337ab7;
+  font-size: 0.875em; }
+  .what:hover {
+    color: orange; }
+
+.tc {
+  cursor: pointer;
+  font-size: 0.875em; }
+  .tc:hover {
+    color: orange; }
+
+.what {
+  cursor: pointer;
+  color: #337ab7;
+  font-size: 0.875em; }
+  .what:hover {
+    color: orange; }
+
+.loginLink {
+  padding-right: 0; }
 
 .buttonLogoff {
   background: none !important;
@@ -98,6 +95,25 @@ td {
   cursor: pointer; }
   .buttonLogoff:hover {
     color: orange; }
+
+.close-btn {
+  font-style: italic; }
+
+.what {
+  cursor: pointer;
+  color: #337ab7;
+  font-size: 0.875em; }
+  .what:hover {
+    color: orange; }
+
+.requestTable tr {
+  background-color: #F0F8FF; }
+  .requestTable tr:nth-child(2n) {
+    background-color: #deeff5; }
+
+.requestTable {
+  padding-top: 40px;
+  padding-bottom: 40px; }
 
 /* Popup style for 'What is this?' and Terms and Conditions */
 .popup .popuptext {
@@ -117,30 +133,43 @@ td {
   cursor: pointer;
   font-size: 0.875em; }
 
-.tc {
-  cursor: pointer;
-  font-size: 0.875em; }
-  .tc:hover {
-    color: orange; }
-
 .popup .show {
   visibility: visible; }
-
-.close-btn {
-  font-style: italic; }
-
-.tcCheckbox {
-  padding-bottom: 10px; }
 
 /* Popup overlay link for 'what is this?' */
 .whatPop {
   text-align: center; }
 
-.what {
-  cursor: pointer;
-  color: #337ab7;
-  font-size: 0.875em; }
-  .what:hover {
-    color: orange; }
+.foot {
+  padding-top: 10px;
+  background: #ededed;
+  height: 150px;
+  text-align: center; }
+
+.tandcLink {
+  padding-top: 10px; }
+
+.top {
+  /* padding-bottom: $base-padding * 2; */
+  background-color: #ededed; }
+
+.top-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto; }
+  @media (min-width: 660px) {
+    .top-links {
+      width: 660px; } }
+
+.login {
+  text-align: right; }
+
+.links a {
+  padding: 10px;
+  display: inline-block; }
+  @media (min-width: 660px) {
+    .links a {
+      padding: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

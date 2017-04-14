@@ -1,0 +1,24 @@
+
+.buttonLogoff {
+    background: none !important;
+    border: none; 
+    padding: 0 !important;
+    cursor: pointer;
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+.close-btn {
+    font-style: italic;
+}
+
+// what is this button
+.what {
+    cursor: pointer;
+    color: $link-color;
+    font-size: 0.875em; 
+    &:hover {
+        color: $link-hover-color;
+    }
+}

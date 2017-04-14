@@ -1,170 +1,18 @@
-$link-hover-color: orange;
-$link-color: #337ab7;
-$background-grey: #ededed;
-$base-padding: 20px;
-$base-font: 16px;
+// variables 
+@import "variables";
 
-@import "header.scss";
-@import "footer.scss";
+// Type selecters
+@import "reset";
 
-body {
-    font-family: Tsukushi A Round Gothic;
-    font-size: $base-font;
-}
+@import "typography";
 
-.mainContent {
-    min-height: 560px;
-}
+@import "./components/layout";
+@import "./components/logo";
+@import "./components/forms";
+@import "./components/navigation";
+@import "./components/buttons";
+@import "./components/tables";
+@import "./components/popups";
+@import "./components/footer";
 
-a {
-    padding-right: $base-padding;
-    color: $link-color;    
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
-.logo {
-    display: block;
-    margin: 0 auto;
-    max-height: 280px;
-    max-width: 130px;
-    padding-bottom: $base-padding;
-    padding-top: $base-padding * 2;
-}
-
-.logoText {
-    display: block;
-    margin: 0 auto;
-    padding-bottom: $base-padding * 2;
-}
-
-.top {
-    /* padding-bottom: $base-padding * 2; */
-    padding-bottom: $base-padding;
-    background-color: $background-grey;
-}
-
-table {
-    text-align: center;
-    width: 100%;
-    border-color: black;
-}
-
-.requestTable tr {
-    background-color: #F0F8FF;
-    &:nth-child(2n) {
-        background-color: #deeff5;
-    }
-}
-
-th {
-    text-align: center;
-    background-color: white;
-}
-
-td {
-    padding-top: $base-padding - 5;
-    padding-bottom: $base-padding - 5;
-    min-width: 180px;
-}
-
-.requestTable {
-    padding-top: $base-padding * 2;
-    padding-bottom: $base-padding * 2;
-}
-
-.ponderingText {
-    font-style: italic;
-    color:  #A9A9A9;
-}
-
-/* style for login form fields */
-.loginForm {
-    padding-top: $base-padding * 2;
-    padding-bottom: $base-padding * 2;
-    text-align: center;
-}
-
-.loginLink {
-    padding-right: 0;
-}
-
-.widthForm {
-    max-width: 160px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.errorMessages {
-    // this is base 16px * 1.5 = 24px
-    font-size: 1.5em;
-    color: red;
-    text-align: center;
-}
-
-.buttonLogoff {
-    background: none !important;
-    border: none; 
-    padding: 0 !important;
-    cursor: pointer;
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
-/* Popup style for 'What is this?' and Terms and Conditions */
-.popup .popuptext {
-    width: 350px;
-    max-height: content;
-    position: fixed; 
-    margin: 0 auto;
-    background-color: #555; 
-    color: #fff;
-    padding: $base-padding / 2;
-    border-radius: 6px;
-    top: 50%; 
-    left: 50%; 
-    margin: -165px 0 0 -170px; /* [-(height/2)px 0 0 -(width/2)px] */
-    display: none; 
-    cursor: pointer;
-    font-size: 0.875em; 
-}
-
-.tc {
-    cursor: pointer;
-    font-size: 0.875em;
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
-.popup .show {
-    visibility: visible;
-} 
-
-.close-btn {
-    font-style: italic;
-}
-
-.tcCheckbox {
-    padding-bottom: $base-padding / 2;
-}
-
-
-/* Popup overlay link for 'what is this?' */
-.whatPop {
-    text-align: center;
-}
-
-.what {
-    cursor: pointer;
-    color: $link-color;
-    font-size: 0.875em; 
-    &:hover {
-        color: $link-hover-color;
-    }
-}
-
-
+@import "./components/header";

@@ -1,0 +1,29 @@
+body {
+    font-family: Tsukushi A Round Gothic;
+    font-size: $base-font;
+}
+
+a {
+    padding-right: $base-padding;
+    color: $link-color;    
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    border-color: black;
+}
+
+th {
+    text-align: center;
+    background-color: white;
+}
+
+td {
+    padding-top: $base-padding - 5;
+    padding-bottom: $base-padding - 5;
+    min-width: 180px;
+}

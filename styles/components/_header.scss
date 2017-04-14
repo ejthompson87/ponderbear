@@ -1,0 +1,32 @@
+
+.top {
+    /* padding-bottom: $base-padding * 2; */
+    background-color: $background-grey;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: auto;
+
+    @media (min-width: #{$break-tablet}) {
+        width: $break-tablet;
+    }
+}
+
+.login {
+    text-align: right;
+}
+
+.links {
+    a {
+        padding: $base-padding / 2;
+        display: inline-block;
+
+        @media (min-width: #{$break-tablet}) {
+            padding: $base-padding;
+        }
+    }
+}
