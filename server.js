@@ -20,56 +20,56 @@ if (!['LOCAL', 'PRODUCTION'].includes(env)) {
 // Connect to database
 var dbPool;
 
-if (env === 'PRODUCTION') {
-    dbPool = mysql.createPool(process.env.CLEARDB_DATABASE_URL + "&connectionLimit=10");
-    // Start app here
-    appSetup();
-    
-} else if (env === 'LOCAL') {
-    let dbName = 'ponderbear';
-    // If running locally: check/set up db schema
-    let schemaConn = mysql.createConnection({
-      host     : 'localhost',
-      user     : 'root',
-      password : 'monopoly',
-      multipleStatements: true
-    });
-    // Delete, re-create database:
-    // Use '??' to have the MySQL client escape the name with backticks ` instead of passing a 'string' in the SQL.
-    schemaConn.query("DROP DATABASE IF EXISTS ??", [dbName], (err, results) => { 
-        if (err) {
-            throw err;
-        }
-        // Re-create
-        schemaConn.query("CREATE DATABASE ??", [dbName], (err, results) => {
+let dbSetup = (done) => {
+    if (env === 'PRODUCTION') {
+        dbPool = mysql.createPool(process.env.CLEARDB_DATABASE_URL + "&connectionLimit=10");
+        done();
+
+    } else if (env === 'LOCAL') {
+        let dbName = 'ponderbear';
+        // If running locally: check/set up db schema
+        let schemaConn = mysql.createConnection({
+          host     : 'localhost',
+          user     : 'root',
+          password : 'monopoly',
+          multipleStatements: true
+        });
+        // Delete, re-create database:
+        // Use '??' to have the MySQL client escape the name with backticks ` instead of passing a 'string' in the SQL.
+        schemaConn.query("DROP DATABASE IF EXISTS ??", [dbName], (err, results) => { 
             if (err) {
                 throw err;
             }
-            // read schema file 
-            fs.readFile('db/schema.sql', 'utf8', (err, data) => {
-                if (err) throw err;
-                // Make connection use new database
-                schemaConn.changeUser({database: dbName}, (err, results) => {
-                    // input schema to create tables 
-                    schemaConn.query(data, (err, results) => {
-                        if (err) throw err;
+            // Re-create
+            schemaConn.query("CREATE DATABASE ??", [dbName], (err, results) => {
+                if (err) {
+                    throw err;
+                }
+                // read schema file 
+                fs.readFile('db/schema.sql', 'utf8', (err, data) => {
+                    if (err) throw err;
+                    // Make connection use new database
+                    schemaConn.changeUser({database: dbName}, (err, results) => {
+                        // input schema to create tables 
+                        schemaConn.query(data, (err, results) => {
+                            if (err) throw err;
 
-                        schemaConn.end();
-                        dbPool = mysql.createPool({
-                            host     : 'localhost',
-                            user     : 'root',
-                            password : 'monopoly',
-                            database : dbName
+                            schemaConn.end();
+                            dbPool = mysql.createPool({
+                                host     : 'localhost',
+                                user     : 'root',
+                                password : 'monopoly',
+                                database : dbName
+                            });
+                            // Start app here
+                            done();
                         });
-                        // Start app here
-                        appSetup();
-                    });
-                })
-            }); 
-        })
-    });
+                    })
+                }); 
+            })
+        });
+    }
 }
-
 
 let appSetup = () => {
 
@@ -181,3 +181,7 @@ let appSetup = () => {
         console.log('Example app listening on port ', app.get("port"));
     });
 }
+
+dbSetup(() => {
+    appSetup();    
+});
