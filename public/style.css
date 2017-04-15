@@ -16,14 +16,6 @@ th {
   text-align: center;
   background-color: white; }
 
-td {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  min-width: 150px; }
-  @media (min-width: 660px) {
-    td {
-      min-width: 320px; } }
-
 .ponderingText {
   font-style: italic;
   color: #A9A9A9; }
@@ -129,11 +121,17 @@ td {
   align-items: center;
   justify-content: center;
   margin: auto; }
-
-.requestTable tr {
-  background-color: #F0F8FF; }
-  .requestTable tr:nth-child(2n) {
-    background-color: #deeff5; }
+  .requestTable tr {
+    background-color: #F0F8FF; }
+    .requestTable tr:nth-child(2n) {
+      background-color: #deeff5; }
+  .requestTable td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-width: 155px; }
+    @media (min-width: 660px) {
+      .requestTable td {
+        min-width: 320px; } }
 
 /* Popup style for 'What is this?' and Terms and Conditions */
 .popup .popuptext {

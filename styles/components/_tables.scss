@@ -8,11 +8,20 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-}
 
-.requestTable tr {
-    background-color: #F0F8FF;
-    &:nth-child(2n) {
-        background-color: #deeff5;
+    tr {
+        background-color: #F0F8FF;
+        &:nth-child(2n) {
+            background-color: #deeff5;
+        }
+    }
+    
+    td {
+        padding-top: $base-padding - 5;
+        padding-bottom: $base-padding - 5;
+        min-width: 155px;
+        @media (min-width: #{$break-tablet}) {
+            min-width: 320px;
+        }
     }
 }

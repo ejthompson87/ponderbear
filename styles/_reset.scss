@@ -21,11 +21,4 @@ th {
     background-color: white;
 }
 
-td {
-    padding-top: $base-padding - 5;
-    padding-bottom: $base-padding - 5;
-    min-width: 150px;
-    @media (min-width: #{$break-tablet}) {
-        min-width: 320px;
-    }
-}
+
