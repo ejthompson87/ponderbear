@@ -19,8 +19,10 @@ th {
 
 td {
   padding-top: 15px;
-  padding-bottom: 15px;
-  min-width: 180px; }
+  padding-bottom: 15px; }
+  @media (min-width: 660px) {
+    td {
+      min-width: 180px; } }
 
 .ponderingText {
   font-style: italic;
@@ -32,7 +34,10 @@ td {
   text-align: center; }
 
 .main-content {
-  min-height: 560px; }
+  min-height: 320px; }
+  @media (min-width: 660px) {
+    .main-content {
+      min-height: 560px; } }
 
 .logo {
   display: block;
@@ -56,11 +61,19 @@ td {
 .loginLink {
   padding-right: 0; }
 
-.widthForm {
-  max-width: 160px;
+.ideaForm {
+  display: flex;
+  align-items: center;
   display: block;
-  margin-left: auto;
-  margin-right: auto; }
+  margin: auto;
+  max-width: 660px; }
+
+.widthLoginForm {
+  display: flex;
+  align-items: center;
+  display: block;
+  margin: auto;
+  max-width: 220px; }
 
 .tcCheckbox {
   padding-bottom: 10px; }
@@ -143,11 +156,13 @@ td {
 .foot {
   padding-top: 10px;
   background: #ededed;
-  height: 150px;
   text-align: center; }
+  @media (min-width: 660px) {
+    .foot {
+      height: 150px; } }
 
 .tandcLink {
-  padding-top: 10px; }
+  padding: 10px; }
 
 .top {
   /* padding-bottom: $base-padding * 2; */

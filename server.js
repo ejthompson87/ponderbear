@@ -20,6 +20,7 @@ if (!['LOCAL', 'PRODUCTION'].includes(env)) {
 // Connect to database
 var dbPool;
 
+// done must be a function, which is called when database connection is set up and ready.
 let dbSetup = (done) => {
     if (env === 'PRODUCTION') {
         dbPool = mysql.createPool(process.env.CLEARDB_DATABASE_URL + "&connectionLimit=10");
@@ -183,5 +184,5 @@ let appSetup = () => {
 }
 
 dbSetup(() => {
-    appSetup();    
+    appSetup(); 
 });

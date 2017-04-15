@@ -1,5 +1,8 @@
 .main-content {
-    min-height: 560px;
+    min-height: 320px; 
+    @media (min-width: #{$break-tablet}) {
+        min-height: 560px;
+    }
 }
 
 

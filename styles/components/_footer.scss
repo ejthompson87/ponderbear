@@ -2,10 +2,12 @@
 .foot {  
     padding-top: $base-padding / 2;
     background: $background-grey;
-    height: 150px;
     text-align: center; 
+    @media (min-width: #{$break-tablet}) {
+        height: 150px;
+    }   
 }
 
 .tandcLink {
-    padding-top: $base-padding / 2;
+    padding: $base-padding / 2;
 }

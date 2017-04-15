@@ -17,31 +17,27 @@
             src="logoText.png"
             alt="Ponder Bear"/>
     </div>
-    <div class="row">
-        <div class="col-md-3"> </div>
-        <div class="col-md-6">    
-            <form action="/submit" method="post">
-                <fieldset>
-                    <div class="form-group">
-                        <input autocomplete="off" autofocus class="form-control textBox" maxlength="200" name="idea" placeholder="Input question.." type="text"/>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-default" type="submit">
-                            <span aria-hidden="true"></span>
-                                Submit
-                        </button>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-        <div class="col-md-3"> </div>
+    <div class="ideaForm">
+        <form action="/submit" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control textBox" maxlength="200" name="idea" placeholder="Input question.." type="text"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" type="submit">
+                        <span aria-hidden="true"></span>
+                            Submit
+                    </button>
+                </div>
+            </fieldset>
+        </form>
     </div>
 </div>    
 <div class="errorMessages"> {{requestErr}} </div>
 <div class="bottom"> 
     <div class="row bottomText">
-        <div class="col-md-3"> </div>
-        <div class="col-md-6 whatPop">
+        <div class="col-xs-3"> </div>
+        <div class="col-xs-6 whatPop">
             <span class="popup" onclick="whatOverlay()">
                 <span class="what">
                     what is this?    
@@ -60,7 +56,7 @@
             }
             </script>            
         </div>
-        <div class="col-md-3"> </div>
+        <div class="col-xs-3"> </div>
     </div>
 </div>
 

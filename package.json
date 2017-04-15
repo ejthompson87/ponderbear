@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/jasmine",
-    "start": "node server.js"
+    "start": "node server.js",
+    "start_local": "ENV=LOCAL node server.js"
   },
   "keywords": [
     "CS50",

@@ -25,5 +25,7 @@ th {
 td {
     padding-top: $base-padding - 5;
     padding-bottom: $base-padding - 5;
-    min-width: 180px;
+    @media (min-width: #{$break-tablet}) {
+        min-width: 180px;
+    }
 }
