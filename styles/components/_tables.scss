@@ -1,5 +1,5 @@
 
-.requestTable {
+.tables {
     text-align: center;
     border-color: black; 
     padding-top: $base-padding * 2;
@@ -8,20 +8,24 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-
     tr {
         background-color: #F0F8FF;
         &:nth-child(2n) {
             background-color: #deeff5;
         }
     }
-    
     td {
         padding-top: $base-padding - 5;
         padding-bottom: $base-padding - 5;
+    }
+}
+
+.requestTable {
+    td {
         min-width: 155px;
         @media (min-width: #{$break-tablet}) {
             min-width: 320px;
         }
     }
 }
+
