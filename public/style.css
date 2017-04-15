@@ -10,8 +10,7 @@ a {
 
 table {
   text-align: center;
-  width: 100%;
-  border-color: black; }
+  border: none; }
 
 th {
   text-align: center;
@@ -19,10 +18,11 @@ th {
 
 td {
   padding-top: 15px;
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  min-width: 150px; }
   @media (min-width: 660px) {
     td {
-      min-width: 180px; } }
+      min-width: 320px; } }
 
 .ponderingText {
   font-style: italic;
@@ -119,14 +119,20 @@ td {
   .what:hover {
     color: orange; }
 
+.requestTable {
+  text-align: center;
+  border-color: black;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto; }
+
 .requestTable tr {
   background-color: #F0F8FF; }
   .requestTable tr:nth-child(2n) {
     background-color: #deeff5; }
-
-.requestTable {
-  padding-top: 40px;
-  padding-bottom: 40px; }
 
 /* Popup style for 'What is this?' and Terms and Conditions */
 .popup .popuptext {

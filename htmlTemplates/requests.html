@@ -1,45 +1,41 @@
 {{> header}}
 
-<div class="row requestTable">
-    <div class="col-xs-3"></div>
-    <div class="col-xs-6">
-        <table border="2" class="requestTable">
+<div>
+    <table border="2" class="requestTable">
+        <tr>
+            <th> Request: </th>
+            <th> Answer: </th>
+        <tr>
+        <div class="requestResponse">
+            {{#questions}}
             <tr>
-                <th> Request: </th>
-                <th> Answer: </th>
-            <tr>
-            <div class="requestResponse">
-                {{#questions}}
-                <tr>
-                    <td class="questionData">
-                        {{question}} 
-                    </td>
-                    <td class="answerData">
-                        {{answer}}
-                        {{^answer}} 
-                        <div class="ponderingText">
-                            Pondering....
-                        </div>
-                        {{/answer}}
-                    </td>
-                </tr>
-                {{/questions}}
-                {{^questions}} 
-                <tr> 
-                    <td class="questionData"> 
-                        No requests submitted. 
-                    </td> 
-                    {{^answers}}
-                    <td class="answerData"></td>
-                    {{/answers}}
-                </tr>
-                {{/questions}} 
-                
-            </div>
-        </table>
+                <td class="questionData">
+                    {{question}} 
+                </td>
+                <td class="answerData">
+                    {{answer}}
+                    {{^answer}} 
+                    <div class="ponderingText">
+                        Pondering....
+                    </div>
+                    {{/answer}}
+                </td>
+            </tr>
+            {{/questions}}
+            {{^questions}} 
+            <tr> 
+                <td class="questionData"> 
+                    No requests submitted. 
+                </td> 
+                {{^answers}}
+                <td class="answerData"></td>
+                {{/answers}}
+            </tr>
+            {{/questions}} 
+            
+        </div>
+    </table>
     <div class="errorMessages"> {{requestErr}} </div>
-    </div>
-    <div class="col-xs-3"></div>
 </div>
 
 {{> footer}}
