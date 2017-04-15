@@ -22,6 +22,9 @@ var dbPool;
 
 if (env === 'PRODUCTION') {
     dbPool = mysql.createPool(process.env.CLEARDB_DATABASE_URL + "&connectionLimit=10");
+    // Start app here
+    appSetup();
+    
 } else if (env === 'LOCAL') {
     let dbName = 'ponderbear';
     // If running locally: check/set up db schema
