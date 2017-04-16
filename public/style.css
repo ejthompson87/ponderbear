@@ -51,9 +51,6 @@ th {
   padding-bottom: 40px;
   text-align: center; }
 
-.loginLink {
-  padding-right: 0; }
-
 .ideaForm {
   display: flex;
   align-items: center;
@@ -70,13 +67,6 @@ th {
 
 .tcCheckbox {
   padding-bottom: 10px; }
-
-.what {
-  cursor: pointer;
-  color: #337ab7;
-  font-size: 0.875em; }
-  .what:hover {
-    color: orange; }
 
 .tc {
   cursor: pointer;
