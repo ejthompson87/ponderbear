@@ -6,12 +6,13 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
-    "express-session": "^1.14.1",
     "express": "^4.14.0",
-    "mysql": "^2.11.1",
+    "express-session": "^1.14.1",
     "mustache-express": "^1.2.2",
+    "mysql": "^2.11.1",
     "passport": "^0.3.2",
-    "password-hash": "^1.2.2"
+    "password-hash": "^1.2.2",
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "jasmine": "^2.5.3"

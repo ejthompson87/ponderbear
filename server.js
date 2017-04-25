@@ -32,7 +32,7 @@ let dbSetup = (done) => {
         let schemaConn = mysql.createConnection({
           host     : 'localhost',
           user     : 'root',
-          password : 'monopoly',
+          password : 'SOME-PASSWORD',
           multipleStatements: true
         });
         // Delete, re-create database:
@@ -59,7 +59,7 @@ let dbSetup = (done) => {
                             dbPool = mysql.createPool({
                                 host     : 'localhost',
                                 user     : 'root',
-                                password : 'monopoly',
+                                password : 'SOME-PASSWORD',
                                 database : dbName
                             });
                             // Start app here
