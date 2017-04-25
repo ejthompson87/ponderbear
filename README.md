@@ -4,6 +4,7 @@ Ponder Bear
 
 Ponder Bear is a website which accepts a question from the user and provides a creative response from a human.
 
+See ponderbear live here: http://www.askponderbear.com/
 
 ## Local Development 
 
@@ -14,15 +15,15 @@ Install dependencies from package.json file.
     $ npm install 
 
 Dependencies include: 
-    * Sass
-    * Express
-    * Mustache
-    * fs
-    * mySql
+* Sass
+* Express
+* Mustache
+* fs
+* mySql
 
 Middle-ware
-    * Session
-    * BodyParser
+* Session
+* BodyParser
 
 ## Run MySQL using Docker: 
 
